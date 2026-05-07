@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-display: "Montserrat", sans-serif;
+
+  --color-primary-red: #E63946;
+  --color-dark-bg: #0A0A0A;
+  --color-dark-paper: #111111;
+  --color-metallic: #A8A8A8;
+  --color-gold: #D4AF37;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: #E5E5E5;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* ----------------------------------
+   LIGHT MODE OVERRIDES
+   ---------------------------------- */
+html.light body {
+  background-color: #F7F7F7;
+  color: #111111;
+}
+
+/* Backgrounds */
+html.light .bg-\[\#0A0A0A\] { background-color: #FFFFFF !important; }
+html.light .bg-\[\#0A0A0A\]\/80 { background-color: rgba(255, 255, 255, 0.8) !important; }
+html.light .bg-\[\#0A0A0A\]\/40 { background-color: rgba(255, 255, 255, 0.4) !important; }
+html.light .bg-\[\#0A0A0A\]\/60 { background-color: rgba(255, 255, 255, 0.6) !important; }
+html.light .bg-\[\#0A0A0A\]\/70 { background-color: rgba(255, 255, 255, 0.7) !important; }
+html.light .bg-\[\#050505\] { background-color: #F7F7F7 !important; }
+html.light .bg-zinc-900 { background-color: #EFEFEF !important; }
+html.light .bg-zinc-950 { background-color: #F7F7F7 !important; }
+html.light .bg-zinc-800\/30 { background-color: rgba(200, 200, 200, 0.3) !important; }
+html.light .bg-black { background-color: #F0F0F0 !important; }
+html.light .bg-black\/30 { background-color: rgba(0, 0, 0, 0.05) !important; }
+html.light .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03) !important; border-color: rgba(0,0,0,0.1) !important; }
+html.light .bg-white\/10 { background-color: rgba(0, 0, 0, 0.06) !important; border-color: rgba(0,0,0,0.15) !important; }
+
+/* Gradients */
+html.light .from-\[\#0A0A0A\] { --tw-gradient-from: #FFFFFF var(--tw-gradient-from-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+html.light .via-\[\#0A0A0A\]\/40 { --tw-gradient-via: rgba(255, 255, 255, 0.4) var(--tw-gradient-via-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to) !important; }
+html.light .via-\[\#0A0A0A\]\/60 { --tw-gradient-via: rgba(255, 255, 255, 0.6) var(--tw-gradient-via-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to) !important; }
+html.light .via-\[\#0A0A0A\]\/70 { --tw-gradient-via: rgba(255, 255, 255, 0.7) var(--tw-gradient-via-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to) !important; }
+
+html.light .from-\[\#050505\]\/40 { --tw-gradient-from: rgba(247, 247, 247, 0.4) var(--tw-gradient-from-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+html.light .via-\[\#050505\]\/60 { --tw-gradient-via: rgba(247, 247, 247, 0.6) var(--tw-gradient-via-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to) !important; }
+html.light .to-\[\#050505\] { --tw-gradient-to: #F7F7F7 var(--tw-gradient-to-position) !important; }
+
+html.light .from-black\/80 { --tw-gradient-from: rgba(255, 255, 255, 0.8) var(--tw-gradient-from-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+html.light .to-transparent { --tw-gradient-to: transparent var(--tw-gradient-to-position) !important; }
+
+
+/* Text (EXCEPT inside red accents) */
+html.light .text-\[\#E5E5E5\],
+html.light .text-white:not(.bg-\[\#E63946\] .text-white):not([class*="bg-[#E63946]"] *):not(.text-\[\#E63946\]) { 
+  color: #111111; /* don't use !important blindly here, but since these are utilities, it's safer */
+}
+html.light .text-white { color: #111111 !important; }
+/* Override the text override for buttons */
+html.light .bg-\[\#E63946\] { color: #FFFFFF !important; } 
+html.light .bg-\[\#E63946\] .text-white { color: #FFFFFF !important; }
+
+html.light .text-zinc-200 { color: #333333 !important; }
+html.light .text-zinc-300 { color: #555555 !important; }
+html.light .text-zinc-400 { color: #666666 !important; }
+html.light .text-zinc-500 { color: #888888 !important; }
+
+/* Borders */
+html.light .border-white\/5 { border-color: rgba(0, 0, 0, 0.08) !important; }
+html.light .border-white\/10 { border-color: rgba(0, 0, 0, 0.15) !important; }
+html.light .border-white\/20 { border-color: rgba(0, 0, 0, 0.25) !important; }
+html.light .border-white\/30 { border-color: rgba(0, 0, 0, 0.35) !important; }
+
+/* App root component text color override specifically for App.tsx top div */
+html.light div.text-\[\#E5E5E5\] {
+    color: #111111 !important;
+}
+
+/* Nav Link overrides to ensure they stay legible */
+html.light .nav-link-text { color: #444444 !important; }
+html.light .nav-link-text:hover, html.light .hover\:text-\[\#E63946\]:hover, html.light .group:hover .group-hover\:text-\[\#E63946\] { color: #C62828 !important; }
+html.light .hover\:bg-red-500:hover { background-color: #C62828 !important; }
+
+html.light header.bg-\[\#0A0A0A\]\/80 { background-color: rgba(255,255,255,0.9) !important; border-bottom-color: rgba(0,0,0,0.1) !important; }
+html.light .nav-btn { color: #111 !important; border-color: rgba(0,0,0,0.1) !important; background-color: rgba(0,0,0,0.05) !important; }
+html.light .nav-btn:hover { background-color: rgba(0,0,0,0.1) !important; }
+html.light .text-\[\#E63946\] { color: #E63946 !important; }
+
+/* Mobile Menu */
+html.light .bg-\[\#050505\] { background-color: #FFFFFF !important; }
+
+/* Grayscale overrides for maps/images */
+html.light .grayscale { filter: grayscale(0.5) !important; }
+
+/* Smoothly transition all background and text colors */
+* {
+    transition-property: background-color, border-color, color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Exclude motion components from global transition if needed, actually it should be fine */
+
+
+/* Base typography for luxury feel */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #A8A8A8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient {
+  background: linear-gradient(to right, #D4AF37, #F3E5AB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.red-accent {
+  background: linear-gradient(135deg, #E63946, #B91C27);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Cursor Glow */
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide scrollbar for cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
