@@ -2,7 +2,7 @@
 
 A modern and responsive business website developed for **Sishir Electrical & Interior** to showcase professional electrical and interior solutions with a clean and premium user experience.
 
-🌐 Live Website: https://sishir-electrical-interior.vercel.app/
+🌐 Live Website: https://sishir-electrical.com
 
 ---
 
